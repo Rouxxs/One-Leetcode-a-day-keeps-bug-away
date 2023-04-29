@@ -1,3 +1,4 @@
+import numpy as np
 class Solution(object):
     def numOfArrays(self, n, m, k):
         """
@@ -6,7 +7,9 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        dp = [[[0 for _ in range(m + 1)] for _ in range(k + 1)] for _ in range(n + 1)]
+        # dp = [[[0 for _ in range(m + 1)] for _ in range(k + 1)] for _ in range(n + 1)]
+        dp = np.zeros((n+1, k+1, m+1), dtype=int).tolist()
+
         #print(dp)
         for i in range(1, m+1):
             dp[1][1][i] = 1
