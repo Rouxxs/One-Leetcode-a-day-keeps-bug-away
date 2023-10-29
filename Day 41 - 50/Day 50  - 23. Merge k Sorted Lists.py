@@ -19,6 +19,8 @@ class Solution:
         return lists[0]
 
     def mergeList(self, l1, l2):
+        if not l1:
+            return l2
         if not l2:
             return l1
         small, big = (l1, l2) if l1.val < l2.val else (l2, l1)
